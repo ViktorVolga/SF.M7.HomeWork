@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "Header.h"
 
 
@@ -6,11 +6,11 @@ using namespace std;
 
 int main()
 {
-	try // пробуем
+	try // РїСЂРѕР±СѓРµРј
 	{
-		IntArray a(-7); // пробуем задать отрицательную величину массива
+		IntArray a(-7); // РїСЂРѕР±СѓРµРј Р·Р°РґР°С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅСѓСЋ РІРµР»РёС‡РёРЅСѓ РјР°СЃСЃРёРІР°
 	}
-	catch (const bad_array_new_length& e) //ловим обект классса сгенерированный как исключение
+	catch (const bad_array_new_length& e) //Р»РѕРІРёРј РѕР±РµРєС‚ РєР»Р°СЃСЃСЃР° СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅС‹Р№ РєР°Рє РёСЃРєР»СЋС‡РµРЅРёРµ
 	{
 		cout << "exception catched: ";
 		cout << e.what() << endl;
@@ -44,7 +44,7 @@ int main()
 		{
 			cout << e.what();
 		}
-		//далее просто тестирую работоспособность функций
+		//РґР°Р»РµРµ РїСЂРѕСЃС‚Рѕ С‚РµСЃС‚РёСЂСѓСЋ СЂР°Р±РѕС‚РѕСЃРїРѕСЃРѕР±РЅРѕСЃС‚СЊ С„СѓРЅРєС†РёР№
 		cout << endl << "new lengths: ";
 		b.insertAtBeginning(1);
 		cout << b.getLength() << " ";
