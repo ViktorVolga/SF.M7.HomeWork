@@ -14,15 +14,23 @@ public:
 
 
 
-class IntArray // задаем класс массива
+class Array // задаем класс массива
 {
 	int m_length = 0; //длина массива
 	int* m_data {}; // указатель на массив
 public:
 	IntArray() = default; // конструктор по умолчанию
-	IntArray(int length) : m_length{ length } //конструктор с параметром
-	{
-		m_data = new int[length] {}; // создает новый массив
+	IArray(int length)//конструктор с параметром
+	{	
+		if (length >= 0)
+		{
+			m_length = length;
+			m_data = new int[m_length]; // создает новый массив	
+		}
+		else
+		{
+			throw bad_range();
+		}
 	}
 	~IntArray() // деструктор
 	{
@@ -93,7 +101,7 @@ public:
 	void insertBefore(int value, int index) //вставить элемент в указанное место в массиве
 	{
 		//проверяем не выходим ли мы за массив
-		if (index <= 0 && index >= m_length)
+		if (index <= 0 || index >= m_length)
 		{
 			return; // ничего не делаем если вышли за пределы
 		}
@@ -120,7 +128,7 @@ public:
 	void remove(int index)
 	{
 		//проверяем не выходим ли мы за массив
-		if (index <= 0 && index >= m_length)
+		if (index <= 0 || index >= m_length)
 		{
 			return; // ничего не делаем если вышли за пределы
 		}
