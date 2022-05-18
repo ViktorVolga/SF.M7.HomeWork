@@ -8,7 +8,7 @@ int main()
 {
 	try // пробуем
 	{
-		IntArray a(-7); // пробуем задать отрицательную величину массива
+		Array a(-7); // пробуем задать отрицательную величину массива
 	}
 	catch (const bad_array_new_length& e) //ловим обект классса сгенерированный как исключение
 	{
@@ -16,7 +16,7 @@ int main()
 		cout << e.what() << endl;
 	}
 	
-		IntArray b(2);
+		Array b(2);
 		
 		cout << b.getLength() << endl;
 		b.resize(3);
